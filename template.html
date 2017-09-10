@@ -63,7 +63,7 @@ geojson.features.forEach(function(marker) {
     new mapboxgl.Marker(el)
         .setLngLat(marker.geometry.coordinates)
         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML('<h3>' + 'ip: ' + marker.properties.ip + '</h3><p> Date: ' + marker.properties.date + '</p><p>' + marker.properties.num + ' times</p>'))
+        .setHTML('<h3>' + 'ip: ' + marker.properties.ip + '</h3><p> date: ' + marker.properties.date + '</p><p>' + marker.properties.num + ' times</p>'))
         .addTo(map);
 });
 </script>

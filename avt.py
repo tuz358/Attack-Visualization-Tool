@@ -46,7 +46,7 @@ class AVT(object):
 
 		self.geojson = {"type": "FeatureCollection", "features": points}
 		if save_json:
-			json.dump(self.geojson, open('attacks.json', "w"))
+			json.dump(self.geojson, open('attacks.geojson', "w"))
 		return self.geojson
 
 	def genhtml(self):
@@ -56,7 +56,7 @@ class AVT(object):
 		return html
 
 
-def main(protocol, fpath, save_json):
+def main(fpath, save_json, out):
 	avt = AVT()
 	lines = open(fpath).read().splitlines()
 
@@ -64,14 +64,16 @@ def main(protocol, fpath, save_json):
 	atks_with_location = avt.geoIP()
 	geojson = avt.geoip2geojson(save_json)
 	html = avt.genhtml(geojson)
+	open(out, 'w').write(html)
 
 if __name__=='__main__':
 	print '\n\t\tAttack Visualization Tool\n'
 	parser = argparse.ArgumentParser()
-	parser.add_argument('protocol')
+	#parser.add_argument('protocol')
 	parser.add_argument('-f', '--file', dest='file', required=True)
+	parser.add_argument('-o', '--output', dest='out', required=True)
 	parser.add_argument('-j', '--json', dest='json')
 	parser.add_argument('-d', '--database', dest='db')
 	args = parser.parse_args()
 
-	main(args.protocol, args.file, args.json)
+	main(args.file, args.json, args.out)

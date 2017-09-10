@@ -1,18 +1,32 @@
 # Attack Visualization Tool
 
 ![AVT](http://tuz358.github.io/img/avt.gif)
-(Example: Moonlight style)
 
+## Description
+SSH attack visualization tool
 
 ## Requirements
 - Your own Mapbox account
 - Mapbox API access token
-- IP2Location database (optional)
-
 
 ## Usage
 ```
-$ ./avt.py ssh -f /var/log/access.log -d ip2location.csv
+$ ./avt.py -f /var/log/access.log -o ./ssh-mapbox-gl.html
+```
+
+**osx**
+```
+$ open ./ssh-mapbox-gl.html
+```
+
+**Linux**
+```
 $ gnome-open ./ssh-mapbox-gl.html
 ```
-If gnome-open is not available, click on the generated html file, and open it.
+If gnome-open is not available, click on the generated html file, and open it in a browser.
+
+## Author
+[tuz358](https://github.com/tuz358)
+
+## License
+[GPLv3](https://github.com/tuz358/Attack-Visualization-Tool/blob/master/LICENSE)
