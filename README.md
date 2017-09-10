@@ -1,6 +1,6 @@
 # Attack Visualization Tool
 
-![AVT](http://tuz358.github.io/img/avt.gif)
+<img src="http://tuz358.github.io/img/avt.gif" width="320px">
 
 ## Description
 SSH attack visualization tool
