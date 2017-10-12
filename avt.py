@@ -4,6 +4,7 @@
 import requests
 import json
 import csv
+import re
 import argparse
 import settings
 
